@@ -1,0 +1,29 @@
+.searchWeather form input {
+  width: 280px;
+  height: 2rem;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.searchWeather form button {
+  color: blueviolet;
+  cursor: pointer;
+  height: 2rem;
+  width: 140px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.searchWeather form button:hover {
+  background-color: rgb(47, 243, 56);
+  color: black;
+}

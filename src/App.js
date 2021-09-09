@@ -1,21 +1,6 @@
-import { useEffect, useState } from "react";
+import Routes from "./routes";
 
 function App() {
-  const[weatherData,setWeatherData] = useState({})
-
-  useEffect( () => {
-    const getData = async() =>{
-      
-    }
-  })
-
-  console.log(weatherData)
-
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  );
+  return <Routes />;
 }
-
 export default App;

@@ -1,0 +1,22 @@
+.rootDiv {
+  /* background-color: rgb(185, 44, 241); */
+  /* background-color: rgb(51, 50, 51); */
+  /* background-color: hsl(269,90%,30%); */
+  background-color: hsl(222, 55%, 55%);
+
+
+
+  padding: 1rem 0;
+  margin: 0 0 0.5rem 0;
+}
+
+.header {
+  margin: 0 20%;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+
+.header h2 {
+  color: white;
+}

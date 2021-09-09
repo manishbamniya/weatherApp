@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: hsl(269,90%,30%); */
+  /* background-color: hsl(222, 61%, 53%); */
+  background-color: hsl(222, 61%, 60%);
+  /* background-color: rgb(233, 232, 232); */
+
+
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 5px;  
+}
+
+.weather h1 {
+  color: rgb(251, 180, 47);
+}
+
+.weather h2 {
+  color: pink;
+}
+
+.weather h3 {
+  color: rgb(226, 214, 214);
+}
+
+.center {
+  font-size: 60px;
+  color: white;
+  font-weight: 500;
+}
+
+
+.icon {
+  color: white;
+}
+
+.icon img{
+  height: 150px;
+  width: 150px;
+}
