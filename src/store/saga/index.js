@@ -4,42 +4,63 @@ import axios from "axios";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?";
 const API_KEY = "77ac17d81cfbf9ceb4c55e83863d0a35";
 
-// const BY_LOCATION = 'lat={lat}&lon={lon}'
+const fetchedWeatherDataByLocation = async (lat, lon) => {
+  try {
+    const response = await axios(
+      `${BASE_URL}lat=${lat}&lon=${lon}&appid=${API_KEY}&&units=metric`,
+      {
+        method: "GET",
+      }
+    );
+    const weatherAllData = await response.data;
+    return weatherAllData;
+  } catch (error) {
+    const weatherData = error
+    return weatherData
+  }
+};
 
-// const BY_CITY = 'q={city}'
-
-// const fetchAllWeatherDataByCity = async () => {
-//   const response = await axios(
-//     `${BASE_URL}q=Ambala&appid=${API_KEY}&&units=metric`,
-//     {
-//       method: "GET",
-//     }
-//   );
-//   const weatherAllData = await response.data;
-//   return weatherAllData;
-// };
-
-const fetchAllWeatherDataByLocation = async (lat, lon) => {
-  const response = await axios(
-    `${BASE_URL}lat=${lat}&lon=${lon}&appid=${API_KEY}&&units=metric`,
-    {
-      method: "GET",
-    }
-  );
-  const weatherAllData = await response.data;
-  console.log(weatherAllData);
-  return weatherAllData;
+const fetchedWeatherDataByCityName = async (city) => {
+  try {
+    const response = await axios(
+      `${BASE_URL}q=${city}&appid=${API_KEY}&&units=metric`,
+      {
+        method: "GET",
+      }
+    );
+    const weatherAllData = await response.data;
+    return weatherAllData;
+  } catch (error) {
+    const weatherData = error
+    return weatherData
+  }
 };
 
 function* fetchWeatherData(action) {
   const fetchedWeatherData = yield call(
-    fetchAllWeatherDataByLocation,
+    fetchedWeatherDataByLocation,
     action.lattitude,
     action.longitude
   );
   yield put({ type: "WEATHER_FETCHED_DATA", fetchedWeatherData });
 }
 
+function* fetchWeatherDataByCityName(action) {
+  console.log(action.city);
+  const fetchedWeatherData = yield call(
+    fetchedWeatherDataByCityName,
+    action.city
+  );
+  yield put({
+    type: "WEATHER_FETCHED_DATA_BY_CITY_NAME",
+    fetchedWeatherData,
+  });
+}
+
 export default function* rootSaga() {
-  yield all([takeEvery("REQUEST_WEATHER_DATA", fetchWeatherData)]);
+  yield all([
+    takeEvery("REQUEST_WEATHER_DATA", fetchWeatherData),
+    takeEvery("REQUEST_WEATHER_DATA_BY_CITY", fetchWeatherDataByCityName),
+  ]);
+  // yield all([]);
 }
