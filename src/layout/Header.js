@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   rootDiv: {
-    backgroundColor: "hsl(222, 55%, 45%)",
+    backgroundColor: "hsl(222.2, 20.6%, 25.7%)",
     padding: "1rem 0",
   },
   header: {

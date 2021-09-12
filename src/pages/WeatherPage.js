@@ -9,7 +9,6 @@ const WeatherPage = (props) => {
   const [longitude, setLongitude] = useState(76.8639550768954);
   // const currMinute = new Date().getMinutes();
   // const[currentMinute,setCurrentMinute] = useState(currMinute)
-  console.log(weatherData)
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLattitude(position.coords.latitude);

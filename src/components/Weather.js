@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "../assets/images/04d.png";
+// import icon from "../assets/images/04d.png";
 import Loader from "./Loader";
 import { makeStyles } from "@material-ui/core";
 
@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2rem",
     borderRadius: "10px",
     border: "none",
-    outline: "none",    
+    outline: "none",
   },
 
   weatherRootDiv: {
@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: "white",
     "& img": {
-      height: "150px",
-      width: "150px",
+      height: "200px",
+      width: "200px",
     },
   },
   headerDiv: {
@@ -60,13 +60,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const days = {
+  0: "Sunday",
   1: "Monday",
   2: "Tuesday",
   3: "Wednesday",
   4: "Thursday",
   5: "Friday",
   6: "Saturday",
-  7: "Sunday",
 };
 
 const months = {
@@ -101,6 +101,17 @@ const Weather = (props) => {
     time.getHours() >= 12 ? "PM" : "AM"
   }`;
 
+  function importAll(r) {
+    const images = {};
+    r.keys().map((item, index) => {
+      return (images[item.replace("./", "")] = r(item));
+    });
+    return images;
+  }
+  const images = importAll(
+    require.context("../assets/images", false, /\.(png|jpe?g|svg)$/)
+  );
+
   return (
     <>
       {isLoading && <Loader />}
@@ -128,7 +139,10 @@ const Weather = (props) => {
                 </h2>
               </div>
               <div className={classes.icon}>
-                <img alt="weather icon" src={icon}></img>
+                <img
+                  alt="weather icon"
+                  src={images[`${data.weather[0].icon}.svg`].default}
+                />
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-// import classes from "./SearchWeather.module.css";
 // import SearchIcon from "@material-ui/icons/Search";
 // import { Input } from "@material-ui/core";
 // import { InputAdornment } from "@material-ui/core";
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "600",
       },
       "& button": {
-        color: "blueviolet",
+        color: "black",
         cursor: "pointer",
         height: "2rem",
         width: "140px",
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         transition: "all 0.2s ease-in",
       },
       "& button:hover": {
-        backgroundColor: "rgb(47, 243, 56)",
+        backgroundColor: "rgb(164, 234, 255)",
         color: "black",
       },
     },
