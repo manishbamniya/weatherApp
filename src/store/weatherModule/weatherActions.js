@@ -12,11 +12,3 @@ export const getWeatherDataByCityName = (city) => {
         city:city
     }
 }
-
-// export const getUserDetails = (ID) => {
-//     console.log("getUserDetails     " + ID)
-//     return {
-//         type: "REQUEST_USER_DETAILS",
-//         id:ID
-//     }
-// }

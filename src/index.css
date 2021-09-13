@@ -5,15 +5,8 @@
 }
 
 body {
-  /* background: url('./assets/images/bg5.jpg'); */
   background-color: #262936;
-  /* background-repeat: no-repeat; */
-  /* background-position: center center; */
-
-
-
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  /* min-height: 77vh; */
 }

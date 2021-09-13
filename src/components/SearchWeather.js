@@ -53,7 +53,7 @@ const SearchWeather = (props) => {
   return (
     <div className={classes.searchWeather}>
       <form onSubmit={locationSubmitHandler}>
-        <input type="text" placeholder="Enter City" ref={inputCityRef} />
+        <input type="text" placeholder="Search By City" ref={inputCityRef} />
         <button type="submit">Search</button>
         {/* <SearchIcon />
         <Input
